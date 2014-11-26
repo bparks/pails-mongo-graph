@@ -14,3 +14,11 @@ class Config
 		), $opts);
 	}
 }
+
+function mongo_graph_config($app)
+{
+	$conn_strings = $app->connection_strings();
+	\MongoGraph\Config::init(array(
+		'connection_string' => $conn_strings['mongo_'.\Pails\Application::environment()]
+	));
+}
