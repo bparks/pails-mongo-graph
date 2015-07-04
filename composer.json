@@ -1,0 +1,8 @@
+{
+	"name": "pails/mongo_graph",
+	"autoload": {
+		"files": ["index.php"]
+	},
+	"require": {
+	}
+}
