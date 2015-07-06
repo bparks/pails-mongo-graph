@@ -15,10 +15,13 @@ class Config
 	}
 }
 
-function mongo_graph_config($app)
+class MongoGraph
 {
-	$conn_strings = $app->connection_strings();
-	\MongoGraph\Config::init(array(
-		'connection_string' => $conn_strings['mongo_'.\Pails\Application::environment()]
-	));
+	static function initialize($app)
+	{
+		$conn_strings = $app->connection_strings();
+		\MongoGraph\Config::init(array(
+			'connection_string' => $conn_strings['mongo_'.\Pails\Application::environment()]
+		));
+	}
 }
